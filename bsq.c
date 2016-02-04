@@ -10,38 +10,77 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-t_sq	bsq(char **map, t_sq sq)
+#include "bsq.h"
+
+int		is_sq(char **map, int j, int i, int size)
 {
-	int	i;
-	int	j;
-	int	c;
+	int c;
 	int	d;
 
-	i = 1;
-	while (map[i])
+	d = i;
+	ft_putchar('1');
+	while(map[d] && d < i + size)
 	{
-		j = 0;
-		while (map[i][j])
+		ft_putchar('2');
+		c = j;
+		while(map[d][c] && c < j + size)
 		{
-			c = i;
-			while (map[c])
+			ft_putchar('3');
+		/*	if (map[d][c] == map[0][ft_strlen(map[0]) - 2])
 			{
-				d = j;
-				while (map[c][d] == map[0][ft_strlen(map[0]) - 3] && j + sq.size >= d)
-					++d;
-				if (map[c][d] == map[0][ft_strlen(map[0]) - 2)
-				++c;
-			}
-			++j;
+				ft_putchar('4');
+				return (0);
+			}*/
+			c++;
 		}
-		++i;
+		if (c != j + size)
+			return (0);
+		d++;
 	}
-	return (sq);
+	ft_putchar('5');
+	if (d != i + size)
+		return (0);
+	return (1);
 }
 
-sqintab(char **map)
+void	biggestsq(char **map, t_sq *sq, int i, int j)
+{
+	int	size;
+ft_putchar('\n');
+print_map(map, sq);
+
+	size = sq->size + 1;
+	ft_putchar('J');
+	while (is_sq(map, i, j, size) == 1)
+	{
+		ft_putchar('K');
+		sq->x = i;
+		sq->y = j;
+		sq->size = size;
+		size++;
+	}
+	ft_putchar('L');
+}
+
+t_sq	bsq(char **map)
 {
 	t_sq	sq;
+	int		i;
+	int		j;
 
 	sq.size = 0;
+	sq.x = 1;
+	sq.y = 0;
+	i = 1;
+	while(map[i])
+	{
+		j = 0;
+		while(map[i][j])
+		{
+			biggestsq(map, &sq, i, j);
+			j++;
+		}
+		i++;
+	}
+	return (sq);
 }

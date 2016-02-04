@@ -10,6 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "bsq.h"
+
+int	ft_strlen(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')

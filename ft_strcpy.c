@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lnagy <lnagy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/30 20:09:55 by lnagy             #+#    #+#             */
-/*   Updated: 2015/12/31 00:16:12 by lnagy            ###   ########.fr       */
+/*   Created: 2015/12/06 01:44:34 by lnagy             #+#    #+#             */
+/*   Updated: 2015/12/06 01:52:29 by lnagy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
-int	ft_atoi(const char *s)
+char	*ft_strcpy(char *dest, const char *src)
 {
-	int	tmp;
-	int	i;
-	int sig;
- 
- 	sig = 1;
+	int i;
+
 	i = 0;
-	tmp = 0;
-	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\r'
-		|| s[i] == '\n' || s[i] == '\f' || s[i] == '\v')
-		++i;
-	if (s[i] == '-' || s[i] == '+')
+	while (src[i])
 	{
-		if (s[i] == '-')
-			sig = -1;
-		++i;
+		dest[i] = src[i];
+		i++;
 	}
-	while (s[i] && ft_isdigit(s[i]))
-	{
-		tmp = tmp * 10;
-		tmp = tmp + s[i] - '0';
-		++i;
-	}
-	return (tmp * sig);
+	dest[i] = '\0';
+	return (dest);
 }

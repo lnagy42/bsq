@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lnagy <lnagy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/30 20:09:55 by lnagy             #+#    #+#             */
-/*   Updated: 2015/12/31 00:16:12 by lnagy            ###   ########.fr       */
+/*   Created: 2016/02/02 16:54:42 by lnagy             #+#    #+#             */
+/*   Updated: 2016/02/02 16:54:43 by lnagy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
-int	ft_atoi(const char *s)
+int	main(int ac, char **av)
 {
-	int	tmp;
-	int	i;
-	int sig;
- 
- 	sig = 1;
-	i = 0;
-	tmp = 0;
-	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\r'
-		|| s[i] == '\n' || s[i] == '\f' || s[i] == '\v')
-		++i;
-	if (s[i] == '-' || s[i] == '+')
+	int		i;
+	int		j;
+	char	*tab;
+	t_sq	sq;
+	char	**map;
+
+	(void)ac;
+	j = 1;
+	while (av[j])
 	{
-		if (s[i] == '-')
-			sig = -1;
-		++i;
+		i = 0;
+		tab = read_file(av[j]);
+		write(1, "lo1", 3);
+		map = map_error(tab);
+		write(1, "lo2", 3);
+		sq = bsq(map);
+		write(1, "lo3", 3);
+		print_map(map, &sq);
+		write(1, "lo4", 3);
+		++j;
 	}
-	while (s[i] && ft_isdigit(s[i]))
-	{
-		tmp = tmp * 10;
-		tmp = tmp + s[i] - '0';
-		++i;
-	}
-	return (tmp * sig);
+	return(0);
 }

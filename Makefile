@@ -10,13 +10,14 @@
 #                                                                              #
 # **************************************************************************** #
 
-FLAG = -Wall -Wextra -Werror -O3
+FLAG = -Wall -Wextra -Werror
 
 NAME = bsq
 
 SRC = error.c \
 	bsq.c \
-	ft_strlen.c \
+	print.c \
+	ft_strcpy.c \
 	ft_strsub.c \
 	ft_strsplit.c \
 	ft_strjoin.c \
@@ -28,15 +29,15 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@gcc $(FLAG) -o $(NAME) $(OBJ)
-	@echo "$(NAME) created"
+	gcc $(FLAG) -o $(NAME) $(OBJ)
+	echo "$(NAME) created"
 
 %.o: %.c
-	@gcc $(FLAG) -c $< -o $@
+	gcc $(FLAG) -c $< -o $@
 
 clean:
-	@rm -f $(OBJ)
-	@echo "$(NAME) *.o removed"
+	rm -f $(OBJ)
+	echo "$(NAME) *.o removed"
 
 fclean: clean
 	@rm -f $(NAME)

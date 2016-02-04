@@ -10,11 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft_l/libft.h"
-#include <fcntl.h>
-#include <sys/types.h>
-#include <sys/uio.h>
-#include <unistd.h>
+#include "bsq.h"
 
 char	*read_file(char *nm_fl)
 {
@@ -26,7 +22,7 @@ char	*read_file(char *nm_fl)
 	tab = "";
 	fd = open(nm_fl, O_RDONLY);
 	if (fd == -1)
-		ft_putstr("File doesn't exist.");
+		write(1, "File doesn't exist.", 19);
 	else
 	{
 		while ((rd = read(fd, buf, 150)))
@@ -103,23 +99,4 @@ char	**map_error(char *tab)
 		++i;
 	}
 	return (tmp);
-}
-
-int	main(int ac, char **av)
-{
-	(void)ac;
-	int	i;
-	int	j;
-	char *tab;
-
-	j = 1;
-	while (av[j])
-	{
-		i = 0;
-		tab = read_file(av[j]);
-		ft_putstr(tab);
-		map_error(tab);
-		++j;
-	}
-	return(0);
 }
