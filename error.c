@@ -48,7 +48,7 @@ char	**check_char(char **tab)
 		++i;
 	if (ft_atoi(tab[0]) != i - 1)
 	{
-		write(2, "map error1\n", 10);
+		write(2, "map error\n", 10);
 		return (NULL);
 	}
 	i = 0;
@@ -63,7 +63,7 @@ char	**check_char(char **tab)
 		{
 			if (tab[c][d] != tab[i][j] && tab[c][d + 1] != tab[i][j])
 			{
-				write(2, "map error2\n", 10);
+				write(2, "map error\n", 10);
 				return (NULL);
 			}
 			++j;
@@ -83,7 +83,7 @@ char	**map_error(char *tab)
 	i = 1;
 	if (!tab || (tab[ft_strlen(tab) - 1] != '\n'))
 	{
-		write(2, "map error3\n", 10);
+		write(2, "map error\n", 10);
 		return (NULL);
 	}
 	tmp = ft_strsplit(tab, '\n');
@@ -93,7 +93,7 @@ char	**map_error(char *tab)
 	{
 		if (tmp[i + 1] != NULL && ft_strlen(tmp[i]) != ft_strlen(tmp[i + 1]))
 		{
-			write(2, "map error4\n", 10);
+			write(2, "map error\n", 10);
 			return (NULL);
 		}
 		++i;

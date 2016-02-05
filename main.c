@@ -26,13 +26,10 @@ int	main(int ac, char **av)
 	{
 		i = 0;
 		tab = read_file(av[j]);
-		write(1, "lo1", 3);
-		map = map_error(tab);
-		write(1, "lo2", 3);
+		if ((map = map_error(tab)) == NULL)
+			return (0);
 		sq = bsq(map);
-		write(1, "lo3", 3);
 		print_map(map, &sq);
-		write(1, "lo4", 3);
 		++j;
 	}
 	return(0);

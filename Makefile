@@ -14,15 +14,16 @@ FLAG = -Wall -Wextra -Werror
 
 NAME = bsq
 
-SRC = error.c \
-	bsq.c \
-	print.c \
-	ft_strcpy.c \
-	ft_strsub.c \
-	ft_strsplit.c \
-	ft_strjoin.c \
-	ft_putstr.c \
-	ft_atoi.c \
+SRC = error.c\
+	bsq.c\
+	print.c\
+	ft_strcpy.c\
+	ft_strsub.c\
+	ft_strsplit.c\
+	ft_isdigit.c\
+	ft_strjoin.c\
+	ft_atoi.c\
+	main.c
 
 OBJ = $(SRC:.c=.o)
 
