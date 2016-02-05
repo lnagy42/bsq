@@ -1,40 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lnagy <lnagy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/02 16:54:42 by lnagy             #+#    #+#             */
-/*   Updated: 2016/02/05 16:53:29 by lnagy            ###   ########.fr       */
+/*   Created: 2015/11/11 00:02:12 by lnagy             #+#    #+#             */
+/*   Updated: 2016/02/05 16:49:01 by lnagy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
-int	main(int ac, char **av)
+void	ft_putstr(char *s)
 {
-	int		i;
-	int		j;
-	char	*tab;
-	t_sq	sq;
-	char	**map;
-
-	(void)ac;
-	j = 1;
-	ft_putstr(av[0]);
-	while (av[j])
-	{
-		i = 0;
-		tab = read_file(av[j]);
-		write(1, "lo1", 3);
-		map = map_error(tab);
-		write(1, "lo2", 3);
-		sq = bsq(map);
-		write(1, "lo3", 3);
-		print_map(map, &sq);
-		write(1, "lo4", 3);
-		++j;
-	}
-	return(0);
+	write(1, s, ft_strlen(s));
 }
