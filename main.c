@@ -22,7 +22,6 @@ int	main(int ac, char **av)
 
 	(void)ac;
 	j = 1;
-	ft_putstr(av[0]);
 	while (av[j])
 	{
 		i = 0;
