@@ -32,5 +32,5 @@ int	main(int ac, char **av)
 		print_map(map, &sq);
 		++j;
 	}
-	return(0);
+	return (0);
 }

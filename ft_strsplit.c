@@ -47,14 +47,12 @@ char	**ft_strsplit(char const *s, char c)
 	{
 		len = 0;
 		while (s[i] == c)
-			++i;
+			i++;
 		if (s[i] == '\0')
 			break ;
-		while (s[i] != c && s[i])
-		{
-			++i;
+		--i;
+		while (s[++i] != c && s[i])
 			++len;
-		}
 		tmp[j] = ft_strsub(s, i - len, len);
 		++j;
 	}

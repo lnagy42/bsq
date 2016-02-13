@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnagy </var/mail/lnagy>                    +#+  +:+       +#+        */
+/*   By: lnagy <lnagy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/23 01:26:54 by lnagy             #+#    #+#             */
 /*   Updated: 2015/12/23 01:46:56 by lnagy            ###   ########.fr       */

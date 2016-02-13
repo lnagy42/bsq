@@ -18,10 +18,10 @@ int		is_sq(char **map, int i, int j, int size)
 	int	d;
 
 	d = i;
-	while(map[d] && d < i + size)
+	while (map[d] && d < i + size)
 	{
 		c = j;
-		while(map[d][c] && c < j + size)
+		while (map[d][c] && c < j + size)
 		{
 			if (map[d][c] == map[0][ft_strlen(map[0]) - 2])
 			{
@@ -62,10 +62,10 @@ t_sq	bsq(char **map)
 	sq.x = 1;
 	sq.y = 0;
 	i = 1;
-	while(map[i])
+	while (map[i])
 	{
 		j = 0;
-		while(map[i][j])
+		while (map[i][j])
 		{
 			biggestsq(map, &sq, i, j);
 			j++;

@@ -12,12 +12,12 @@
 
 #include "bsq.h"
 
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-int is_square(t_sq *sq, int i, int j)
+int		is_square(t_sq *sq, int i, int j)
 {
 	if ((sq->x <= i && i < sq->x + sq->size)
 		&& (sq->y <= j && j < sq->y + sq->size))
@@ -25,15 +25,12 @@ int is_square(t_sq *sq, int i, int j)
 	return (0);
 }
 
-void print_map(char **map, t_sq *sq)
+void	print_map(char **map, t_sq *sq)
 {
-	char full;
-	int i;
-	int j;
+	char	full;
+	int		i;
+	int		j;
 
-ft_putchar('0' + sq->x);
-ft_putchar('0' + sq->y);
-ft_putchar('\n');
 	full = map[0][ft_strlen(map[0]) - 1];
 	i = 1;
 	while (map[i])
@@ -42,17 +39,12 @@ ft_putchar('\n');
 		while (map[i][j])
 		{
 			if (is_square(sq, i, j))
-			{
 				ft_putchar(full);
-			}
 			else
-			{
 				ft_putchar(map[i][j]);
-			}
 			j++;
 		}
 		ft_putchar('\n');
 		i++;
 	}
 }
-

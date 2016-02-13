@@ -34,6 +34,12 @@ char	*read_file(char *nm_fl)
 	return (tab);
 }
 
+char	**ft_error(void)
+{
+	write(2, "map error\n", 10);
+	return (NULL):
+} 
+
 char	**check_char(char **tab)
 {
 	int	i;
@@ -46,29 +52,18 @@ char	**check_char(char **tab)
 	c = 0;
 	while (tab[i])
 		++i;
-	if (ft_atoi(tab[0]) != i - 1)
-	{
-		write(2, "map error\n", 10);
-		return (NULL);
-	}
-	i = 0;
-	while (ft_isdigit(tab[i][j]) == 1)
+	if (ft_atoi(ft_strsub(tab[0], 0, ft_strlen(tab[0]) - 3) != i - 1)
+		return (ft_error());
+	while (ft_isdigit(tab[0][j]) == 1)
 		++j;
 	d = j;
-	i = 1;
-	while (tab[i])
+	i = 0;
+	while (tab[++i])
 	{
-		j = 0;
-		while (tab[i][j])
-		{
+		j = -1;
+		while (tab[i][++j])
 			if (tab[c][d] != tab[i][j] && tab[c][d + 1] != tab[i][j])
-			{
-				write(2, "map error\n", 10);
-				return (NULL);
-			}
-			++j;
-		}
-		++i;
+				return (ft_error());
 	}
 	return (tab);
 }
